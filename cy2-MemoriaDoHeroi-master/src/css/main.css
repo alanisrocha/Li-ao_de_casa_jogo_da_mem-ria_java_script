@@ -1,0 +1,119 @@
+/* Regras gerais */
+/*   */
+html {
+	/* Cores */
+	background-color: #111;
+
+	/* Modelo de caixa */
+	padding: 0px;
+
+	/* Aparência */
+	overflow: hidden;
+}
+
+body {
+	/* Cores */
+	background-color: midnightblue;
+	color: white;
+
+	/* Dimensionamento */
+	/* A largura será proporcional à menor dimensão */
+	min-width: 100vmin;
+	max-width: 100vmin;
+	aspect-ratio: 1;
+	/* A altura é igual à largura */
+
+	/* Modelo de caixa */
+	margin: 0px auto;
+	padding: 0px;
+}
+
+h1 {
+	/* Cores */
+	background-color: black;
+
+	/* Dimensionamento */
+	width: 100%;
+	max-height: 30%;
+	font-size: 3.5em;
+
+	/* Modelo de caixa */
+	margin: 0px;
+
+	/* Alinhamento */
+	text-align: center;
+}
+
+/* Menu */
+#menu {
+	width: 100%;
+	height: 100%;
+}
+
+#menu *{
+	overflow: hidden;
+}
+
+#menu>.container {
+	/* Dimensionamento */
+	width: 100%;
+	height: inherit;
+	max-height: 70%;
+
+	/* Exibição */
+	display: flex;
+	flex-direction: column;
+
+	/* Alinhamento */
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/* Seleção */
+#numCards {
+	/* Cores */
+	background-color: transparent;
+	color: lightblue;
+
+	/* Dimensionamento */
+	font-size: 4em;
+
+	/* Modelo de caixa */
+	border: none;
+	outline: none;
+
+	/* Alinhamento */
+	text-align: center;
+
+}
+
+#numCards>option {
+	/* Cores */
+	background-color: midnightblue;
+}
+
+/* Botão de início */
+#start {
+	/* Cores */
+	background-color: lightblue;
+
+	/* Dimensionamento */
+	font-size: 2.5em;
+	min-height: 25vmin;
+	max-height: 50vmin;
+	aspect-ratio: 2;
+
+	/* Modelo de caixa */
+	border-radius: 15vmin;
+	/* Borda arredondada */
+}
+
+#start:hover {
+	/* efeito de luz ao passar o mouse */
+	box-shadow: lightblue 0px 0px 20px;
+}
+
+/* Oculto */
+.hidden {
+	display: none !important;
+}

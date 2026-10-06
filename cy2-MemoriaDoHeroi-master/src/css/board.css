@@ -1,0 +1,91 @@
+/* Variáveis */
+:root{
+    --size: 10vmin;
+    --numCols: 1;
+}
+
+/* Regras para o tabuleiro do jogo */
+#board{
+    /* Cores */
+    background-color: navy;
+
+    /* Dimensionamento */
+    height: 100%;
+
+    /* Exibição */
+    display: grid;
+    grid-template-columns: repeat(var(--numCols),1fr);
+
+    /* Alinhamento */
+    align-items: center;
+    place-items: center;
+}
+
+/* Cartas */
+.flip-card{
+    /* Cores */
+    background-color: transparent;
+    /* Dimensionamento */
+    width: var(--size);
+    height: var(--size);
+    /* Estado */
+    perspective: 1000px;
+}
+.flip-card-inner{
+    /* Cores */
+    box-shadow: 0 4px 10px 0 black;
+    /* Dimensionamento */
+    width: 100%;
+    height: 100%;
+    /* Posicionamento */
+    position: relative;
+    /* Alinhamento */
+    text-align: center;
+    /* Animação */
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    /* Estado */
+    pointer-events: none;
+    /* Os cliques não se propagam para os elementos filhos */
+}
+
+/* Vira as cartas selecionadas e correspondentes */
+.flip-card .flip-card-inner:is(.selected,.matched){
+    /* Estado */
+    transform: rotateY(180deg);
+}
+/* Regras comuns para frente e costas das cartas */
+.flip-card-front,
+.flip-card-back{
+    /* Dimensionamento */
+    width: 100%;
+    height: 100%;
+    /* Posicionamento */
+    position: absolute;
+    /* Exibição */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+/* Frente da carta */
+.flip-card-front{
+    /* Aparência */
+    background-image: url("../images/ui/CtrlPlay.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Costas da carta */
+.flip-card-back{
+    /* Cores */
+    background-color: black;
+    /* Estado */
+    transform: rotateY(180deg);
+}
+.flip-card-back>img{
+    /* Dimensionamento */
+    width: 100%;
+    height: 100%;
+}
+.flip-card-inner.matched .flip-card-back>img{
+    opacity: .2;
+}
